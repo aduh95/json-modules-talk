@@ -1,0 +1,1 @@
+npx @marp-team/marp-cli@latest  README.md -o slides.html && php -S localhost:8080

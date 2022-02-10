@@ -8,6 +8,10 @@ marp: true
 margin: auto;
 display: block;
   }
+
+  section>p:first-child:last-child>img:first-child:last-child{
+    max-height: 50vh;
+  }
 </style>
 
 # The Road to JSON Import Support in Node.js
@@ -42,7 +46,7 @@ A handy way to interact JSON files from your JS code.
 
 ## History of JSON modules in the JS ecosystem
 
-### CommonJS
+### CommonJS (CJS)
 
 - CommonJS is the "classic" way Node.js modules are used (`require()`,
   `module.exports`, etc.)
@@ -60,7 +64,7 @@ A handy way to interact JSON files from your JS code.
 
 ## History of JSON modules in the JS ecosystem
 
-### ESM (ECMAScript modules)
+### ECMAScript modules (ESM)
 
 - Part of the ES6/ES2015 spec.
 - Use `import` and `export` keywords.
@@ -104,8 +108,9 @@ A handy way to interact JSON files from your JS code.
 
 ### 1st tentative: change the HTML spec
 
-![screenshot of the revert](revert-json-modules-in-html-spec.jpeg) _It was
-reverted 5 months later._
+![screenshot of the revert](revert-json-modules-in-html-spec.jpeg)
+
+_It was reverted 5 months later._
 
 [proposal to revert]: https://github.com/WICG/webcomponents/issues/839
 [revert pr]: https://github.com/whatwg/html/pull/4943
@@ -174,20 +179,17 @@ console.log(weatherData);
 
 ---
 
-<style>
-  #12 img{width:75vw}
-</style>
-
 ![Screenshot of the TC39 proposals](./tc39-proposals.png)
+
+---
+
+![Screenshot of the Temporal TC39 proposals](./temporal-proposal.png)
 
 ---
 
 ## JSON modules today
 
 ### Node.js and web compatibility
-
-One of the great success of Node.js ESM implementation is that it allows users
-to write code that Just Works™ everywhere (on the web, on Deno, on Node.js).
 
 ```
 ECMAScript spec (TC39)
@@ -269,8 +271,17 @@ const { version } = packageJson;
 
 ## What's next?
 
-- Test it, and report.
+The ball is on your court:
+
+- Test it, play with it!
+- Don't hesitate to open issues and PRs.
 - Beyond web compatibility:
-  - YAML modules, TOML modules, etc.
-  - Assertionless JSON import.
+  - YAML modules?
+  - TOML modules?
   - TypeScript imports.
+
+---
+
+## That's all folks!
+
+**Thanks for tunning in.**
